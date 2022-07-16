@@ -6,6 +6,7 @@ namespace hosts.net.Parsing;
 
 public class HostsFileEntry
 {
+    internal static readonly char[] _trimChars = {'\r', '\n', ' ', '\t'};
     internal HostsFileEntry(){}
     /// <summary>
     /// Read/Write the raw host entry when save is called.
@@ -42,11 +43,11 @@ public class HostsFileEntry
         get
         {
             if (!CommentEntry.IsValidString(RawString)) return default;
-            return RawString[1..];
+            return RawString[1..].Trim(_trimChars);
         }
         set
         {
-            RawString = "# " + (value.Trim('\r', '\n', ' ', '\t'));
+            RawString = "# " + (value.Trim(_trimChars));
         }
     }
     
@@ -163,7 +164,7 @@ internal static class HostEntry
     /// <returns></returns>
     public static bool IsValidHostname(string value)
     {
-        var name = value.Trim('\r', '\n', ' ', '\t');
+        var name = value.Trim(HostsFileEntry._trimChars);
         if (!name.Any()) return false;
         if (name.Any(c =>
             {
