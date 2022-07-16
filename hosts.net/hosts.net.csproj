@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>hosts.net</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Encodeous</Authors>
+    <PackageTags>hosts.net;cross platform;hosts file</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>
+      This library provides an easy way to modify and parse the hosts file on Windows and Unix platforms. See https://github.com/encodeous/hosts.net for more information.
+    </Description>
+    <Title>hosts.net - Xplat hosts file library.</Title>
+    <PackageProjectUrl>https://github.com/encodeous/hosts.net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/encodeous/hosts.net</RepositoryUrl>
+    <RootNamespace>hosts.net</RootNamespace>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+</Project>
