@@ -22,6 +22,7 @@ public class HostsFileEntry
         {
             if (CommentEntry.IsValidString(RawString)) return EntryType.Comment;
             if (HostEntry.IsValidString(RawString)) return EntryType.Host;
+            if (BlankEntry.IsValidString(RawString)) return EntryType.Blank;
             return EntryType.Unparsable;
         }
     }
@@ -121,6 +122,16 @@ public class HostsFileEntry
         Comment = comment;
         return this;
     }
+    
+    /// <summary>
+    /// Sets the current entry to be a blank entry
+    /// </summary>
+    /// <returns></returns>
+    public HostsFileEntry SetBlank()
+    {
+        RawString = "";
+        return this;
+    }
 
     /// <summary>
     /// Creates a new & blank entry
@@ -137,6 +148,13 @@ internal static class CommentEntry
     public static bool IsValidString(string value)
     {
         return value.Any() && value.StartsWith("#");
+    }
+}
+internal static class BlankEntry
+{
+    public static bool IsValidString(string value)
+    {
+        return !value.Any();
     }
 }
 internal static class HostEntry

@@ -4,5 +4,6 @@ public enum EntryType
 {
     Comment,
     Host,
+    Blank,
     Unparsable
 }
