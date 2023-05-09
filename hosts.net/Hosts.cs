@@ -10,7 +10,9 @@ public class Hosts
     {
         if (path is null)
         {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) 
+                || RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD)
+                || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
                 path = "/etc/hosts";
             }
