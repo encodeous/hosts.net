@@ -189,7 +189,7 @@ internal static class HostEntry
                 if(!char.IsAscii(c)) return true;
                 return (c != '-' && c != '.' && !IsAlphaNum(c));
             })) return false;
-        if (!char.IsAlphaNum(name[0]) || !IsAlphaNum(name[^1]))
+        if (!IsAlphaNum(name[0]) || !IsAlphaNum(name[^1]))
         {
             return false;
         }
