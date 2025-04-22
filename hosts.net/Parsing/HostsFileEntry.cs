@@ -176,7 +176,7 @@ internal static class HostEntry
     /// <summary>
     /// According to man7
     /// Host names may contain only alphanumeric characters, minus signs ("-"), and periods (".").
-    /// They must begin with an alphabetic character and end with an alphanumeric character.
+    /// They must begin with an alphanumeric character and end with an alphanumeric character. (Relaxed in RFC1123)
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>
