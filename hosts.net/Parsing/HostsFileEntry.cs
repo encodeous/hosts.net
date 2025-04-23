@@ -182,19 +182,7 @@ internal static class HostEntry
     /// <returns></returns>
     public static bool IsValidHostname(string value)
     {
-        var name = value.Trim(HostsFileEntry._trimChars);
-        if (!name.Any()) return false;
-        if (name.Any(c =>
-            {
-                if(!char.IsAscii(c)) return true;
-                return (c != '-' && c != '.' && !IsAlphaNum(c));
-            })) return false;
-        if (!IsAlphaNum(name[0]) || !IsAlphaNum(name[^1]))
-        {
-            return false;
-        }
-
-        return true;
+        return Uri.CheckHostName(value) != UriHostNameType.Unknown;
     }
     
     private static bool IsAlphaNum(char c)
