@@ -182,7 +182,7 @@ internal static class HostEntry
     /// <returns></returns>
     public static bool IsValidHostname(string value)
     {
-        return Uri.CheckHostName(value) != UriHostNameType.Unknown;
+        return Uri.CheckHostName(value) == UriHostNameType.Dns;
     }
     
     private static bool IsAlphaNum(char c)
